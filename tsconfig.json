@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "ES2022",
+        "forceConsistentCasingInFileNames": true,
+        "allowImportingTsExtensions": true,
+        "moduleResolution": "Node",
+        "noEmit": true
+    }
+}

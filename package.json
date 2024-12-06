@@ -1,0 +1,16 @@
+{
+  "name": "manifold-tools",
+  "version": "0.0.1",
+  "main": "packages/demo/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "workspaces": [
+    "packages/manifold-lib",
+    "packages/manifold-utils",
+    "packages/demo"
+  ]
+}
