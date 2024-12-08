@@ -29,7 +29,6 @@ export async function main({ segments, radius }: OptionsFromParameters<typeof pa
 const parameterDefinitions = [
 	{ type: 'slider', name: 'segments', initial: 32 },
 	{ type: 'slider', name: 'radius', initial: 60, live: true },
-	{ type: 'text', name: 'test', initial: 'hello' },
 ] as const satisfies ParameterDefinition[];
 
 export const getParameterDefinitions = () => parameterDefinitions;
