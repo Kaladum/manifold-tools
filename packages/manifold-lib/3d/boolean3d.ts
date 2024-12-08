@@ -22,8 +22,7 @@ export const union3d = (...others: readonly Object3D[]) => (current: Object3D) =
 			if (existingManifold !== undefined) {
 				const newManifold = new ManifoldGc(m3d.Manifold.union(existingManifold.internal, manifold.internal));
 				resultByMaterial.set(material, newManifold);
-			}
-			else {
+			} else {
 				resultByMaterial.set(material, manifold);
 			}
 		}

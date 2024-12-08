@@ -14,8 +14,7 @@ export type AnyVec3 = SimpleVec3 | Vec3;
 export function asSimpleVec3(vec3: AnyVec3): [number, number, number] {
 	if (vec3 instanceof Vec3) {
 		return [vec3.x, vec3.y, vec3.z];
-	}
-	else {
+	} else {
 		return vec3 as [number, number, number];
 	}
 }

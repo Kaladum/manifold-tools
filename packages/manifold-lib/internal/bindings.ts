@@ -19,8 +19,7 @@ export class m3d {
 		if ((globalThis as any)[workaroundKey] !== undefined) {
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			return (globalThis as any)[workaroundKey].Manifold;
-		}
-		else {
+		} else {
 			throw new Error('You must complete the setup function first');
 		}
 	}
@@ -30,8 +29,7 @@ export class m3d {
 		if ((globalThis as any)[workaroundKey] !== undefined) {
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			return (globalThis as any)[workaroundKey].Mesh;
-		}
-		else {
+		} else {
 			throw new Error('You must complete the setup function first');
 		}
 	}

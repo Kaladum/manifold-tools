@@ -26,6 +26,7 @@ export default tseslint.config(
 				},
 				multilineDetection: 'brackets',
 			}],
+			'@stylistic/brace-style': ['warn', '1tbs', { allowSingleLine: true }],
 		},
 	},
 );

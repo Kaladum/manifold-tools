@@ -11,8 +11,7 @@ export class Object3D {
 		if (this.manifoldsByMaterial.size === 1) {
 			// Just keep the Manifold of the only element
 			this.fullManifold = this.manifoldsByMaterial.values().next().value!;
-		}
-		else {
+		} else {
 			this.fullManifold = new ManifoldGc(m3d.Manifold.union([...this.manifoldsByMaterial.values()].map(v => v.internal)));
 		}
 	}
