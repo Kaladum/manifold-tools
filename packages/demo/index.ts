@@ -1,6 +1,7 @@
 import { cube, pipe, setup, sphere, toMesh, setMaterial3d, Material, difference3d, union3d, translate3d, rotate3d, ParameterDefinition, OptionsFromParameters } from 'manifold-lib';
 
-const red = new Material([1, 0, 0, 1]);
+const red = new Material([0.7, 0, 0]);
+const blue = new Material([0, 0.1, 0.7]);
 
 export async function main({ segments, radius }: OptionsFromParameters<typeof parameterDefinitions>) {
 	await setup();
@@ -15,6 +16,7 @@ export async function main({ segments, radius }: OptionsFromParameters<typeof pa
 		difference3d(sphere(radius, segments)),
 		rotate3d([0, 0, 45]),
 		translate3d([0, 0, 100]),
+		setMaterial3d(blue),
 	);
 
 	const result = pipe(
