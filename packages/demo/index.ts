@@ -1,11 +1,8 @@
-import { cube, pipe, setup, sphere, toMesh, setMaterial3d, Material, difference3d, union3d, translate3d, rotate3d } from 'manifold-lib';
+import { cube, pipe, setup, sphere, toMesh, setMaterial3d, Material, difference3d, union3d, translate3d, rotate3d, ParameterDefinition, OptionsFromParameters } from 'manifold-lib';
 
 const red = new Material([1, 0, 0, 1]);
 
-export async function main({ // @jscad-params
-	segments = 32,
-	radius = 60, // {type:'slider', min:51, max:80, live:true}
-}) {
+export async function main({ segments, radius }: OptionsFromParameters<typeof parameterDefinitions>) {
 	await setup();
 
 	const testCube = pipe(
@@ -28,3 +25,11 @@ export async function main({ // @jscad-params
 
 	return toMesh(result);
 }
+
+const parameterDefinitions = [
+	{ type: 'slider', name: 'segments', initial: 32 },
+	{ type: 'slider', name: 'radius', initial: 60, live: true },
+	{ type: 'text', name: 'test', initial: 'hello' },
+] as const satisfies ParameterDefinition[];
+
+export const getParameterDefinitions = () => parameterDefinitions;
