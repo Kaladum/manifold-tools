@@ -52,8 +52,8 @@ export function toMesh(obj3d: Object3D): ExportMesh[] {
 }
 
 export interface ExportMesh {
-	readonly type: 'mesh';
-	readonly vertices: Float32Array;
-	readonly indices: Uint32Array;
-	readonly color?: readonly [number, number, number, number];
+	readonly type: 'mesh',
+	readonly vertices: Float32Array,
+	readonly indices: Uint32Array,
+	readonly color?: readonly [number, number, number, number],
 }

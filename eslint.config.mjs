@@ -17,11 +17,11 @@ export default tseslint.config(
 			'@stylistic/no-tabs': ['warn', { allowIndentationTabs: true }],
 			'@stylistic/member-delimiter-style': ['warn', {
 				multiline: {
-					delimiter: 'semi',
+					delimiter: 'comma',
 					requireLast: true,
 				},
 				singleline: {
-					delimiter: 'semi',
+					delimiter: 'comma',
 					requireLast: false,
 				},
 				multilineDetection: 'brackets',
