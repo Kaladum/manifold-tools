@@ -1,18 +1,18 @@
-import { Manifold } from "./bindings.ts";
+import { Manifold } from './bindings.ts';
 
 const deleteManifoldRegistry = new FinalizationRegistry<Manifold>((manifold) => {
-    manifold.delete()
+	manifold.delete();
 });
 
-const manifoldStorage = new WeakMap<ManifoldGc, Manifold>()
+const manifoldStorage = new WeakMap<ManifoldGc, Manifold>();
 
 export class ManifoldGc {
-    public constructor(internal: Manifold) {
-        manifoldStorage.set(this, internal)
-        deleteManifoldRegistry.register(this, internal)
-    }
+	public constructor(internal: Manifold) {
+		manifoldStorage.set(this, internal);
+		deleteManifoldRegistry.register(this, internal);
+	}
 
-    public get internal() {
-        return manifoldStorage.get(this)!
-    }
+	public get internal() {
+		return manifoldStorage.get(this)!;
+	}
 }
