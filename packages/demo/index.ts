@@ -1,4 +1,6 @@
-import { cube, pipe, rotate3d, setup, sphere, difference3d, toMesh, translate3d, union3d } from 'manifold-lib'
+import { cube, pipe, setup, sphere, toMesh, setMaterial3d, Material, difference3d, union3d, translate3d, rotate3d } from 'manifold-lib'
+
+const red = new Material([1, 0, 0, 1])
 
 export async function main({// @jscad-params
     segments = 32,
@@ -20,6 +22,7 @@ export async function main({// @jscad-params
 
     const result = pipe(
         testCube,
+        setMaterial3d(red),
         union3d(hollowBox),
     )
 

@@ -1,6 +1,7 @@
-import { globalManifold, Object3D } from "../base.ts";
+import { m3d } from "../internal/bindings.ts";
+import { Object3D } from "./object3d.ts";
 import { AnyVec3, asSimpleVec3 } from "./vec3.ts";
 
-export const cube = (size?: AnyVec3, center?: boolean) => new Object3D(globalManifold.cube(size !== undefined ? asSimpleVec3(size) : undefined, center));
-export const sphere = (radius: number, circularSegments?: number) => new Object3D(globalManifold.sphere(radius, circularSegments));
-export const tetrahedron = () => new Object3D(globalManifold.tetrahedron());
+export const cube = (size?: AnyVec3, center?: boolean) => Object3D.fromManifold(m3d.Manifold.cube(size !== undefined ? asSimpleVec3(size) : undefined, center));
+export const sphere = (radius: number, circularSegments?: number) => Object3D.fromManifold(m3d.Manifold.sphere(radius, circularSegments));
+export const tetrahedron = () => Object3D.fromManifold(m3d.Manifold.tetrahedron());
