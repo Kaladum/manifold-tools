@@ -11,5 +11,5 @@ export class Material {
 		}
 	}
 
-	public static default = new Material();
+	public static readonly default = new Material();
 }
